@@ -3,8 +3,7 @@
 # Find Max val
 # Calculate Sum
 # Pre-Order Traversal
-# Post-Order Traversal
-
+# Post-Order Traversal\
 
 class BinarySearchTree:
     
@@ -15,18 +14,15 @@ class BinarySearchTree:
         
     # Binary Search Tree Add Node. Traversal process from left to right
     def addMember(self, data):
-        
         # If data already exists skip
         if data == self.data:
             return
-        
         if data < self.data:
             # check if it's leaf node or not. Else add the item
             if self.left:
                 self.left.addMember(data)
             else:
                 self.left = BinarySearchTree(data)
-        
         if data > self.data:
             if self.right:
                 self.right.addMember(data)
@@ -69,9 +65,7 @@ class BinarySearchTree:
     
     # Pre-Order Traversal
     def preOrderTraversal(self):
-        
         elements = []
-        
         #Root, Left, Right
         elements.append(self.data)
         if self.left:
@@ -101,10 +95,10 @@ def buildTree(elements):
 arr = [4, 7, 9, 12, 17, 18, 20, 26, 32, 45]
 bstTree = buildTree(arr)
 
-inTraversal = bstTree.inOrderTraversal()
-print(inTraversal)
-print(bstTree.maxNumber())
-print(bstTree.minNumber())
-print(bstTree.sumTree())
-print(bstTree.preOrderTraversal())
-print(bstTree.postOrderTraversal())
+print("Maximum Number in Tree is: ", bstTree.maxNumber())
+print("Minimum Number in Tree is: ", bstTree.minNumber())
+print("Sum of Nodes: ", bstTree.sumTree())
+
+print("In Order Traversal: ", bstTree.inOrderTraversal())
+print("Pre Order Traversal: ", bstTree.preOrderTraversal())
+print("Post Order Traversal: ", bstTree.postOrderTraversal())
